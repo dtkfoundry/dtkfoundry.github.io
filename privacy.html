@@ -20,48 +20,86 @@
 <section class="page-head">
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p>Last updated: October 22, 2026</p>
+    <p>Last updated: October 26, 2026</p>
   </div>
 </section>
 <main class="prose">
 
-  <p>This policy covers the DTK Foundry add-ons for Google Docs, Google Sheets, Google Slides and Google Calendar (the
-  "add-ons"), the DTK Foundry actors on Apify, and this website.</p>
+  <p>This policy covers DTK Foundry's Google Workspace add-ons, <strong>Find and Replace with Regex &amp;
+  Formatting</strong> (for Google Docs, Google Slides and Google Sheets) and <strong>Data Analysis &amp; Statistics for
+  Sheets</strong> (for Google Sheets), together "the add-ons"; the DTK Foundry actors on Apify; and this website.</p>
 
-  <h2>What the add-ons access</h2>
+  <h2>Google user data the add-ons access</h2>
+  <table>
+    <thead><tr><th>Add-on</th><th>Permission (OAuth scope)</th><th>Data accessed</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="2">Find and Replace with Regex &amp; Formatting</td>
+        <td><code>documents.currentonly</code>, <code>presentations.currentonly</code>,
+        <code>spreadsheets.currentonly</code></td>
+        <td>The text, and its formatting, of the one document, presentation or spreadsheet you have open and run the
+        add-on in. No other files.</td></tr>
+      <tr><td><code>script.container.ui</code></td>
+        <td>None. It lets the add-on show its sidebar and Help dialog inside that file.</td></tr>
+      <tr><td rowspan="2">Data Analysis &amp; Statistics for Sheets</td>
+        <td><code>spreadsheets.currentonly</code></td>
+        <td>The values in the cell range you select in the spreadsheet you have open. No other files.</td></tr>
+      <tr><td><code>script.container.ui</code></td>
+        <td>None. It lets the add-on show its sidebar and Help dialog inside that spreadsheet.</td></tr>
+    </tbody>
+  </table>
+  <p>The add-ons do not access your name, email address, contacts, other files or any other Google account data.</p>
+
+  <h2>How the add-ons use that data</h2>
   <ul>
-    <li><strong>The open document only.</strong> Find and Replace with Regex and Statistics &amp; Data Analysis request
-    access only to the document, spreadsheet or presentation you have open when you use them
-    (the <code>currentonly</code> scopes). They cannot see your other files.</li>
-    <li><strong>Calendar events (Sheets to Calendar Sync only).</strong> This add-on creates, updates and reads the
-    events it made in the calendar you choose. It does not read your other events.</li>
-    <li><strong>Your email address</strong>, only to link a paid plan to your account.</li>
+    <li><strong>Find and Replace with Regex &amp; Formatting</strong> reads the text of the open file to find the
+    matches you search for, shows them to you in its sidebar, and writes your replacements back into the same file.
+    To offer Undo, it keeps the text it replaced in your last replacement.</li>
+    <li><strong>Data Analysis &amp; Statistics for Sheets</strong> reads the values in the range you select, computes
+    the statistics you choose, and writes the results to a new sheet in the same spreadsheet.</li>
+    <li>The data is used only to provide these features to you, when you run them. It is never used for advertising,
+    sold, used to train AI or machine-learning models, or used for any purpose other than the feature you asked
+    for.</li>
   </ul>
 
-  <h2>What we store</h2>
+  <h2>Sharing, transfer and disclosure</h2>
+  <p>We do not share, transfer or disclose Google user data to anyone. The add-ons run entirely inside Google's Apps
+  Script service: they make no requests to our servers or to any third party, so your data never reaches DTK
+  Foundry or anyone else. The only exception would be one required by law, and since we never receive the data we
+  would have none to hand over.</p>
+
+  <h2>How the data is protected</h2>
   <ul>
-    <li>Your document content is processed inside Google's Apps Script service while the add-on runs. We do not copy,
-    store or send it to our servers or anyone else.</li>
-    <li>Your settings and saved rules are stored in your own Google account (Apps Script user properties).</li>
-    <li>If you buy a paid plan: your email is checked with our payment provider, Stripe, at most once a day, to see
-    whether it has an active purchase. Stripe processes payments through Link as merchant of record under its own
-    privacy policy.</li>
+    <li><strong>Least access:</strong> the add-ons use the narrowest permissions available. The
+    <code>currentonly</code> scopes limit them to the single file you use them in.</li>
+    <li><strong>Stays in Google's infrastructure:</strong> all processing happens in Apps Script, inside your Google
+    account, over Google's encrypted (TLS) connections. Nothing is sent to external servers, so there is no copy for
+    anyone to leak or intercept.</li>
+    <li><strong>Private to you:</strong> the Undo text is kept in Apps Script's per-user cache, which only your account
+    can read. We cannot read it.</li>
   </ul>
 
-  <h2>What we don't do</h2>
+  <h2>Retention and deletion</h2>
   <ul>
-    <li>We do not sell, rent or share your data, and we do not use it for advertising.</li>
-    <li>We do not use data from Google APIs to train AI or machine-learning models.</li>
-    <li>The add-ons' use of information received from Google APIs adheres to the
-    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data
-    Policy</a>, including the Limited Use requirements.</li>
+    <li><strong>Find and Replace with Regex &amp; Formatting:</strong> the text replaced by your last replacement is
+    kept in your Apps Script user cache for at most 6 hours, so you can Undo it, and is then deleted automatically. It
+    is replaced by your next replacement and deleted as soon as you click Undo. Nothing else is kept.</li>
+    <li><strong>Data Analysis &amp; Statistics for Sheets:</strong> keeps nothing. The results exist only on the sheet
+    it writes in your spreadsheet, which you can edit or delete like any other sheet.</li>
+    <li>We hold no copy of your Google user data, so there is nothing for us to delete. You can remove an add-on's
+    access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> or by
+    uninstalling it; any Undo text still cached expires within 6 hours.</li>
   </ul>
 
-  <h2>Removing access and data</h2>
-  <p>You can remove an add-on's access at any time at
-  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Uninstalling removes the
-  add-on; its saved settings stay in your Google account until you delete them. To delete purchase records we hold,
-  email us (see <a href="support.html">Support</a>).</p>
+  <h2>Paid plans</h2>
+  <p>If you buy a paid plan (when one is offered), you check out with Stripe through Link, our merchant of record,
+  under its own privacy policy. We receive your email address and purchase record from Stripe to turn Pro on, and the
+  add-on checks your email with Stripe at most once a day. To delete purchase records we hold, email us (see
+  <a href="support.html">Support</a>).</p>
+
+  <h2>Google API Services User Data Policy</h2>
+  <p>The add-ons' use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+  including the Limited Use requirements.</p>
 
   <h2>Data actors on Apify</h2>
   <p>DTK Foundry actors run inside your own Apify account. Your inputs and results are stored in your Apify storage

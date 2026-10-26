@@ -109,6 +109,10 @@ a.tile:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var
 .prose h2 { font-size: 21px; letter-spacing: -.015em; margin: 40px 0 10px; scroll-margin-top: 80px; }
 .prose h3 { font-size: 17px; }
 .prose li { margin: 4px 0; }
+.prose table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0; display: block; overflow-x: auto; }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.prose th { color: var(--muted); font-weight: 600; }
+.prose code { font-size: .9em; word-break: break-word; }
 .muted { color: var(--muted); }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; margin: 14px 0; box-shadow: var(--shadow); }
 .card h3 { margin: 0 0 6px; font-size: 18px; letter-spacing: -.01em; }
