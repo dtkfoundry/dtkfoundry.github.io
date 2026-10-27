@@ -63,19 +63,25 @@
 
   <h2>Sharing, transfer and disclosure</h2>
   <p>We do not share, transfer or disclose Google user data to anyone. The add-ons run entirely inside Google's Apps
-  Script service: they make no requests to our servers or to any third party, so your data never reaches DTK
-  Foundry or anyone else. The only exception would be one required by law, and since we never receive the data we
-  would have none to hand over.</p>
+  Script service: they make no requests to our servers or to any third party, so your files' contents never reach DTK
+  Foundry or anyone else. The only Google user data we can see is the error logs described under Data protection,
+  which we use only to fix bugs and never share. We would disclose those only if required by law.</p>
 
-  <h2>How the data is protected</h2>
+  <h2>Data protection</h2>
+  <p>We protect Google user data, including any sensitive content in your files, with these safeguards:</p>
   <ul>
     <li><strong>Least access:</strong> the add-ons use the narrowest permissions available. The
-    <code>currentonly</code> scopes limit them to the single file you use them in.</li>
-    <li><strong>Stays in Google's infrastructure:</strong> all processing happens in Apps Script, inside your Google
-    account, over Google's encrypted (TLS) connections. Nothing is sent to external servers, so there is no copy for
-    anyone to leak or intercept.</li>
-    <li><strong>Private to you:</strong> the Undo text is kept in Apps Script's per-user cache, which only your account
-    can read. We cannot read it.</li>
+    <code>currentonly</code> scopes limit them to the single file you use them in, and only while you run them.</li>
+    <li><strong>Encryption in transit and at rest:</strong> all processing happens in Google's Apps Script service,
+    inside your Google account. Data moves only over Google's TLS-encrypted connections and is stored only in Google's
+    systems, which encrypt it at rest. The add-ons send nothing to our servers or to any third party, so there is no
+    copy outside Google to leak or intercept.</li>
+    <li><strong>Access control:</strong> the add-ons run under your Google account's own sign-in and permissions. The
+    Undo text is kept in Apps Script's per-user cache, which only your account can read; we cannot read it.</li>
+    <li><strong>Error logs:</strong> if an add-on hits an error, Apps Script records the error message in our Google
+    Cloud project's logs, which only DTK Foundry's own Google account can open. These messages
+    never include your file's contents. The one exception is an invalid regular expression in Find and Replace: its
+    error message repeats the pattern you typed.</li>
   </ul>
 
   <h2>Retention and deletion</h2>
@@ -85,16 +91,18 @@
     is replaced by your next replacement and deleted as soon as you click Undo. Nothing else is kept.</li>
     <li><strong>Data Analysis &amp; Statistics for Sheets:</strong> keeps nothing. The results exist only on the sheet
     it writes in your spreadsheet, which you can edit or delete like any other sheet.</li>
-    <li>We hold no copy of your Google user data, so there is nothing for us to delete. You can remove an add-on's
+    <li>Error logs (see Data protection) are deleted automatically by Google Cloud Logging after 30 days.</li>
+    <li>We hold no copy of your files' contents, so there is nothing else for us to delete. You can remove an add-on's
     access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> or by
     uninstalling it; any Undo text still cached expires within 6 hours.</li>
   </ul>
 
   <h2>Paid plans</h2>
-  <p>If you buy a paid plan (when one is offered), you check out with Stripe through Link, our merchant of record,
-  under its own privacy policy. We receive your email address and purchase record from Stripe to turn Pro on, and the
-  add-on checks your email with Stripe at most once a day. To delete purchase records we hold, email us (see
-  <a href="support.html">Support</a>).</p>
+  <p>No paid plan is on sale yet. The add-ons have no payment or account features: they do not know who you are and
+  contact no payment service. If we add a paid plan, checkout will be handled by Stripe through Link, our merchant of
+  record, under its own privacy policy. Any add-on feature that needs more access than listed above, such as your
+  Google account's email address to match a purchase, will ask for that permission on Google's consent screen first,
+  and we will update this policy before it is released.</p>
 
   <h2>Google API Services User Data Policy</h2>
   <p>The add-ons' use and transfer of information received from Google APIs adheres to the
